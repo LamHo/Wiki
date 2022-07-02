@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <title> Search results </title>
+    </head>
+    <body>
+        <ul>
+            {% if result %}
+                <h1>Search results:</h1>
+                {% for entry in result %}
+                    <li> <a href = "/wiki/{{ entry }}"> {{ entry }} </a> </li>
+                {% endfor %}
+            {% else %}
+                <h1>No query given!</h1>
+            {% endif %}
+            
+        </ul>
+    </body>
+</html>

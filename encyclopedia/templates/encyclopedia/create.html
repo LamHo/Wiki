@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Create a new page</title>
+    </head>
+    <body>
+        <h1>Create a new page:</h1>
+        <form action="create" method = "post">
+                {% csrf_token %}
+                <label for="title">Title:</label> <br>
+                <textarea id="title" name="in_title" rows="1" cols="30"></textarea>
+                <br><br>
+                <label for="content">Content:</label> <br>
+                <textarea id="content" name="in_content" rows="10" cols="50"></textarea>
+                <br><br>
+                <input type="submit" value="Save">
+                {% if exist %}
+                
+                    <h1>Error: This entry's title already exists!</h1>
+                
+                {% endif %}
+        </form>
+    </body>
+</html>
